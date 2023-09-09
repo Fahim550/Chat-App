@@ -1,7 +1,7 @@
 import React from 'react'
 import GoogleButton from 'react-google-button'
 import { auth } from './firebase'
-import { GoogleAuthProvider, getAuth,signInWithRedirect } from 'firebase/auth'
+import { GoogleAuthProvider, getAuth,signInWithPopup,signInWithRedirect } from 'firebase/auth'
 
 const style={
     wrapper:`flex justify-center`
@@ -9,7 +9,7 @@ const style={
 
 const googleSignIn=()=>{
     const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider);
+    signInWithPopup(auth, provider);
 }
 export default function SignIn() {
   return (
